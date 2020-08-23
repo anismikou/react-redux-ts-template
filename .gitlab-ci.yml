@@ -1,0 +1,43 @@
+image: node:13.8.0
+
+stages:
+  - prepare
+  - build
+  - test
+
+cache:
+  paths:
+    - node_modules/
+
+Prepare:
+  stage: prepare
+  script:
+    - npm install
+  artifacts:
+    paths:
+      - node_modules/
+
+Build:
+  stage: build
+  script:
+    - npm run build
+  dependencies:
+    - Prepare
+  artifacts:
+    paths:
+      - dist
+
+Lint:
+  stage: test
+  script:
+    - npm run lint
+
+UnitTest:
+  stage: test
+  script:
+    - npm run test
+  dependencies:
+    - Prepare
+  artifacts:
+    paths:
+      - src/tests/__snapshots__

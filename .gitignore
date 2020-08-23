@@ -3,3 +3,9 @@
 
 # production
 /dist
+
+# stats
+stats.json
+
+# coverage
+/coverage

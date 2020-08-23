@@ -32,6 +32,12 @@
         "import/no-named-as-default-member": 0,
         "import/extensions": [1, "never"],
         "import/prefer-default-export": [1],
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": true
+            }
+        ],
         "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
         "react/jsx-no-bind": [1],
         "react/destructuring-assignment": [1, "always"],
@@ -46,9 +52,16 @@
         ],
         "@typescript-eslint/camelcase": [
             1,
-            { "properties": "never", "genericType": "never", "ignoreDestructuring": false }
+            {
+                "properties": "never",
+                "genericType": "never",
+                "ignoreDestructuring": false
+            }
         ],
-        "@typescript-eslint/interface-name-prefix": [1, { "prefixWithI": "always" }],
+        "@typescript-eslint/interface-name-prefix": [
+            1,
+            { "prefixWithI": "always" }
+        ],
         "@typescript-eslint/explicit-function-return-type": [0]
     },
     "globals": {

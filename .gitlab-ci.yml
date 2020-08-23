@@ -9,35 +9,35 @@ cache:
   paths:
     - node_modules/
 
-Prepare:
+prepare:
   stage: prepare
   script:
-    - npm install
+    - npm ci
   artifacts:
     paths:
       - node_modules/
 
-Build:
+build:
   stage: build
   script:
     - npm run build
   dependencies:
-    - Prepare
+    - prepare
   artifacts:
     paths:
       - dist
 
-Lint:
+lint:
   stage: test
   script:
     - npm run lint
 
-UnitTest:
+test-unit:
   stage: test
   script:
     - npm run test
   dependencies:
-    - Prepare
+    - prepare
   artifacts:
     paths:
       - src/tests/__snapshots__

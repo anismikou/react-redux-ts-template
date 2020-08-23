@@ -1,14 +1,21 @@
-import React, { SFC } from 'react'
+import React, { FC } from 'react'
+import styled from 'styled-components'
 
 interface IErrorProps {
-    message: string
+    className?: string
+    title: string
+    children: string
 }
-const Error: SFC<IErrorProps> = ({ message }: IErrorProps) => (
-    <div className="alert alert-danger">{message}</div>
+
+const Error: FC<IErrorProps> = ({ className, title, children }) => (
+    <div className={className}>
+        <h1>{title}</h1>
+        <p>{children}</p>
+    </div>
 )
 
-Error.defaultProps = {
-    message: 'Une erreur est survenue',
-}
+const StyledError = styled(Error)`
+    color: red;
+`
 
-export default Error
+export default StyledError

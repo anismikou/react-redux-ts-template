@@ -1,17 +1,11 @@
-import { IAppState, IAppAction, AppTypeKeys } from '../actions/app-actions'
+import { IAppState, IAppAction, AppTypeKeys } from '../actions/app'
 
-const initialState: IAppState = {
-    navFocusable: true,
-}
+const initialState: IAppState = { example: true }
 
 const appReducer = (state: IAppState = initialState, action: IAppAction) => {
     switch (action.type) {
-        case AppTypeKeys.NAV_FOCUSABLE:
-            return { ...state, navFocusable: true }
-            break
-        case AppTypeKeys.NAV_UNFOCUSABLE:
-            return { ...state, navFocusable: false }
-            break
+        case AppTypeKeys.KEY:
+            return { ...state, example: false }
         default:
             return state
     }

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Error /> should render correctly 1`] = `
+<Error
+  className="sc-AxjAm kokBMW"
+  title="title"
+>
+  Message
+</Error>
+`;

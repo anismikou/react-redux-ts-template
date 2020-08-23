@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import 'regenerator-runtime/runtime'
 
+import './style/normalize.css'
 import './style/main.css'
 
 import App from './components/App'
